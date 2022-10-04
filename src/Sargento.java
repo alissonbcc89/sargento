@@ -19,11 +19,10 @@ public class Sargento {
         System.out.println("\nCapturei linha0");
 
         char[] comando = new char[num];
-         // tamanho da string (qtde de caracteres)
         for (int i=0; i < tam; i++) {
             comando[i] = com.charAt(i);
         }
-        System.out.println("Capturei linha");
+
         char direcao;
         String ori = new String("NSLO");
        char[] orientacao = new char[ori.length()];
@@ -37,7 +36,7 @@ public class Sargento {
         for(int i = 0; i < num -1 ; i++ ){
             String char1UpperCase = String.valueOf(comando[i]);
 
-            if (i == 0 && char1UpperCase.equalsIgnoreCase( String.valueOf('D'))) {
+            if(i == 0 && char1UpperCase.equalsIgnoreCase( String.valueOf('D'))) {
 
                 atual = String.valueOf(orientacao[2]);
                 System.out.print("\n"+ atual);
