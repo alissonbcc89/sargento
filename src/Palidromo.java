@@ -4,82 +4,86 @@ import java.util.TreeSet;
 
 public class Palidromo {
 
+    SortedSet<String> ss = new TreeSet<String>();
+    ArrayList<String> palavra = new ArrayList<String>();
+    public static String auxiliar;
+
+    public String converte(String frase){
+        String aux = "";
+        char[] novo = new char[frase.length()];
+
+       ss.add(frase);
 
 
 
-    public void inverte(String frase){
+        for (int i = 0; i < frase.length(); i++) {
+            novo[i] = frase.charAt(i);
+        }
+            aux += String.valueOf(novo[frase.length()-1]);
 
-        char[] caracter = new char[frase.length()];
-        //char[] auxcaracter = new char[fr];
-        String palidromo="";
-        ArrayList<String> ordem = new ArrayList<>();
-        SortedSet<String> ss =  new TreeSet<String>();
-
-
-        for(int i = 0; i < frase.length();i++){
-            caracter[i] = frase.charAt(i);
+        for(int j = 0; j<frase.length()-1;j++){
+            aux += String.valueOf(novo[j]);
         }
 
-        for(int i = 0; i < frase.length(); i ++){
-            palidromo+= caracter[frase.length()-i-1];
-            System.out.print("\n"+palidromo + "\t iteracao geral:"+i);
 
-            if (i == 0) {
-                for (int j = 0; j < frase.length() - 1; j++) {
-                    char auxiliar;
-                    //pq pula o r na segunda interacao?
-                    palidromo += caracter[j];
-                    System.out.print("\n" + palidromo + "\t iteracao local:" + j);
 
-                }
-                ss.add(palidromo);
-                ordem.add(palidromo);
-                palidromo="";
+        //System.out.print(aux);
 
-            }
+        return aux;
+    }
 
-           /* if(i>0){
 
-            palidromo += caracter[frase.length()-i];
-            palidor
+    public void imprime(String frase){
 
 
 
-                  ss.add(palidromo);
-          }*/
+        //imprime(aux);
+        for(int i = 0; i < frase.length()-1; i++){
+            String aux = converte(frase);
+            ss.add(aux);
+            palavra.add(aux);
+            String nome = converte(palavra.get(i));
+            ss.add(nome);
 
-
-          }
-
-
-
-           System.out.print("\n\t Primeiro"+ss.first()+"\n");
-        System.out.print("\n");
-           System.out.print(palidromo);
-           palidromo="";
         }
+        System.out.print(ss.last()+"\t"+ss.first());
 
-      //  String retorno1  = ss.first();
-      //  String retorno2 = ss.last();
-
-       // return "\n" + retorno1 +"\t"+ retorno2 +"\t"+ ss.size();
+    }
 
 
 
 
 
+        //public static void inverter(String frase, int n){
+
+      //  }
     public static void main(String [] args) {
 
             String use = "amor";
 
+
+
             Palidromo palidromo = new Palidromo();
+
+            palidromo.imprime(use);
+
+          // System.out.print(palidromo.converte(use)+"\n");
+         //   String aux = palidromo.converte(use);
+     //   System.out.print(palidromo.converte(aux)+"\n");
+       //     String aux1 = palidromo.converte(aux);
+        //System.out.print(palidromo.converte(aux1)+"\n");
+       //    String aux2 = palidromo.converte(aux1);
+      //  System.out.print(palidromo.converte(aux2)+"\n");
+           // String aux3 = palidromo.converte(aux2);
+           // System.out.print(palidromo.converte(aux3)+"\n");
+
 
 
           //  System.out.print(palidromo.inverte(use));
 
         //Palidromo
 
-        palidromo.inverte(use);
+      //  palidromo.inverte(use);
 
     }
 
