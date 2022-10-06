@@ -34,9 +34,6 @@ public class Palidromo {
 
 
     public void imprime(String frase){
-
-
-
         //imprime(aux);
         for(int i = 0; i < frase.length()-1; i++){
             String aux = converte(frase);
@@ -46,7 +43,7 @@ public class Palidromo {
             ss.add(nome);
 
         }
-        System.out.print(ss.last()+"\t"+ss.first());
+        System.out.print(ss.first()+"\t"+ss.last());
 
     }
 
