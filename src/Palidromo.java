@@ -43,6 +43,7 @@ public class Palidromo {
             ss.add(nome);
 
         }
+
         System.out.print(ss.first()+"\t"+ss.last());
 
     }
