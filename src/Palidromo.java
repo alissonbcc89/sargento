@@ -57,7 +57,7 @@ public class Palidromo {
       //  }
     public static void main(String [] args) {
 
-            String use = "amor";
+            String use = "banana";
 
 
 
