@@ -1,105 +1,138 @@
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class Sargento {
 
-    public static void comando(int num, String com) {
-        char[] comando = new char[num];
+    static int atual = 1;
+    public static void comando(int num, String ordem) {
 
-        for (int i = 0; i < num; i++) {
-            comando[i] = com.charAt(i);
-        }
 
         char direcao;
         String ori = new String("NSLO");
         char[] orientacao = new char[ori.length()];
+        char[] comando = new char[ordem.length()];
 
-        for (int i = 0; i < ori.length(); i++) {
+        for(int i = 0; i < ori.length(); i++) {
             orientacao[i] = ori.charAt(i);
         }
-
-
-        String atual = null;
-        for (int i = 0; i < num - 1; i++) {
-            String char1UpperCase = String.valueOf(comando[i]);
-
-            if (i == 0 && char1UpperCase.equalsIgnoreCase(String.valueOf('D'))) {
-
-                atual = String.valueOf(orientacao[2]);
-
-
-            }
-            if (i == 0 && char1UpperCase.equalsIgnoreCase(String.valueOf('E'))) {
-
-                atual = String.valueOf(orientacao[3]);
-
-
-            }
-
-            if (i != 0 && char1UpperCase.equalsIgnoreCase(String.valueOf('D'))) {
-                if (atual.equalsIgnoreCase(String.valueOf("N"))) {
-                    atual = String.valueOf(orientacao[2]);
-                    System.out.print("\n" + atual);
-
-                }
-                if (atual.equalsIgnoreCase(String.valueOf('S'))) {
-                    atual = String.valueOf(orientacao[3]);
-
-                }
-                if (atual.equalsIgnoreCase(String.valueOf('L'))) {
-                    atual = String.valueOf(orientacao[1]);
-
-                }
-                if (atual.equalsIgnoreCase(String.valueOf('O'))) {
-                    atual = String.valueOf(orientacao[0]);
-
-                }
-
-            }
-            if (i != 0 && char1UpperCase.equalsIgnoreCase(String.valueOf('E'))) {
-                //nslo
-                if (atual.equalsIgnoreCase(String.valueOf("N"))) {
-                    atual = String.valueOf(orientacao[3]);
-
-
-                }
-                if (atual.equalsIgnoreCase(String.valueOf('S'))) {
-                    atual = String.valueOf(orientacao[2]);
-
-
-                }
-                if (atual.equalsIgnoreCase(String.valueOf('L'))) {
-                    atual = String.valueOf(orientacao[0]);
-
-
-                }
-                if (atual.equalsIgnoreCase(String.valueOf('O'))) {
-                    atual = String.valueOf(orientacao[1]);
-
-
-                }
-
-            }
-
-
+        for(int i = 0; i < ordem.length(); i++) {
+            comando[i] = ordem.charAt(i);
         }
-        System.out.print(atual);
+        //String ori = new String "NSLO"
+        int cont = 0;
+            while (cont < num  ) {
+                System.out.println(cont + "primeira etapa do while\n" );
+
+                if( String.valueOf(comando[cont]).equalsIgnoreCase("D")) {
+                    if (String.valueOf(orientacao[atual]).equalsIgnoreCase("N")) {
+                        System.out.print(atual + "\n");
+                        atual = 2;
+                        //cont  ++;
+                        System.out.print(atual + "\n");
+                        System.out.print(cont + "\t" + orientacao[atual] + "\n");
+                        break;
+                    }
+                    if(String.valueOf(orientacao[atual]).equalsIgnoreCase("S")) {
+                        System.out.print(atual + "\n");
+                        atual = 3;
+                        //cont  ++;
+                        System.out.print(atual + "\n");
+                        System.out.print(cont + "\t" + orientacao[atual] + "\n");
+
+                        break;
+
+                    }
+                    //solucionar aqui
+                    if (String.valueOf(orientacao[atual]).equalsIgnoreCase("L")) {
+                        System.out.print(atual + "\n");
+                        atual = 1;
+                        //cont  ++;
+                        System.out.print(atual + "\t" + orientacao[atual] + "\n");
+
+                    }
+
+                    if(String.valueOf(orientacao[atual]).equalsIgnoreCase("O")){
+                        System.out.print(atual + "\n");
+                        atual = 0;
+                        //cont  ++;
+                        System.out.print(atual + "\n");
+                        System.out.print(cont + "\t" + orientacao[atual] + "\n");
+
+                    }
+                }
+                if (String.valueOf(comando[cont]).equalsIgnoreCase("E")) {
+                    if (String.valueOf(orientacao[atual]).equalsIgnoreCase("N")) {
+                        System.out.print(atual + "\n");
+                        atual = 3;
+                        //cont  ++;
+                        System.out.print(atual + "\t" + orientacao[atual] + "\n");
+
+
+                    }
+                    if(String.valueOf(orientacao[atual]).equalsIgnoreCase("S")) {
+                        System.out.print(atual + "\n");
+                        atual = 2;
+                        //cont ++;
+                        System.out.print(atual + "\t" + orientacao[atual] + "\n");
+                        //break;
+                    }
+                    if (String.valueOf(orientacao[atual]).equalsIgnoreCase("L")) {
+                        System.out.print(atual + "\n");
+                        atual = 0;
+
+                        System.out.print(atual + "\t" + orientacao[atual] + "\n");
+                        //break;
+                    }
+                    if (String.valueOf(orientacao[atual]).equalsIgnoreCase("O")) {
+                        System.out.print(atual + "\n");
+                        atual = 1;
+
+                        System.out.print(atual + "\t" + orientacao[atual] + "\n");
+                        //break;
+                    }
+
+                }
+                cont ++;
+            }
+        System.out.print(atual+"\n");
+        System.out.print(orientacao[atual]);
+
     }
+
+
 
 
     public static void main(String[] args) throws IOException {
 
 
+
+
         Scanner ler = new Scanner(System.in);
 
-        int contador = 0;
+        boolean contador = true;
 
-        int num = ler.nextInt();
 
-        String com = ler.next();
+        while(contador == true){
+            int aux = ler.nextInt();
+            String ordem = ler.next();
+            if(aux != 0){
+                comando(aux,ordem);
+            }
+            if(aux == 0){
+                contador = false;
+            }
 
-        comando(num,com);
+
+        }
+
+
+
+
+
+
 
 
     }
