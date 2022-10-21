@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Sargento {
 
-    static int atual = 1;
+    static int atual = 0;
     public static void comando(int num, String ordem) {
 
 
@@ -26,16 +26,17 @@ public class Sargento {
             while (cont < num  ) {
                 System.out.println(cont + "primeira etapa do while\n" );
 
-                if( String.valueOf(comando[cont]).equalsIgnoreCase("D")) {
+                if( String.valueOf(comando[cont]).equalsIgnoreCase("D") && cont < num) {
                     if (String.valueOf(orientacao[atual]).equalsIgnoreCase("N")) {
-                        System.out.print(atual + "\n");
                         atual = 2;
+                        System.out.print(atual + "\n");
+                        //atual = 2;
                         //cont  ++;
                         System.out.print(atual + "\n");
                         System.out.print(cont + "\t" + orientacao[atual] + "\n");
                         break;
                     }
-                    if(String.valueOf(orientacao[atual]).equalsIgnoreCase("S")) {
+                    if(String.valueOf(orientacao[atual]).equalsIgnoreCase("S") ) {
                         System.out.print(atual + "\n");
                         atual = 3;
                         //cont  ++;
@@ -63,7 +64,7 @@ public class Sargento {
 
                     }
                 }
-                if (String.valueOf(comando[cont]).equalsIgnoreCase("E")) {
+                if (String.valueOf(comando[cont]).equalsIgnoreCase("E")){
                     if (String.valueOf(orientacao[atual]).equalsIgnoreCase("N")) {
                         System.out.print(atual + "\n");
                         atual = 3;
