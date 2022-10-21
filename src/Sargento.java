@@ -24,117 +24,58 @@ public class Sargento {
         //String ori = new String "NSLO"
         int cont = 0;
             while (cont < num  ) {
-                System.out.println(cont + "primeira etapa do while\n" );
-
                 if( String.valueOf(comando[cont]).equalsIgnoreCase("D") && cont < num) {
                     if (String.valueOf(orientacao[atual]).equalsIgnoreCase("N")) {
                         atual = 2;
-                        System.out.print(atual + "\n");
-                        //atual = 2;
-                        //cont  ++;
-                        System.out.print(atual + "\n");
-                        System.out.print(cont + "\t" + orientacao[atual] + "\n");
                         break;
                     }
                     if(String.valueOf(orientacao[atual]).equalsIgnoreCase("S") ) {
-                        System.out.print(atual + "\n");
                         atual = 3;
-                        //cont  ++;
-                        System.out.print(atual + "\n");
-                        System.out.print(cont + "\t" + orientacao[atual] + "\n");
-
                         break;
-
                     }
-                    //solucionar aqui
                     if (String.valueOf(orientacao[atual]).equalsIgnoreCase("L")) {
-                        System.out.print(atual + "\n");
                         atual = 1;
-                        //cont  ++;
-                        System.out.print(atual + "\t" + orientacao[atual] + "\n");
-
+                        break;
                     }
-
                     if(String.valueOf(orientacao[atual]).equalsIgnoreCase("O")){
-                        System.out.print(atual + "\n");
-                        atual = 0;
-                        //cont  ++;
-                        System.out.print(atual + "\n");
-                        System.out.print(cont + "\t" + orientacao[atual] + "\n");
-
+                       atual = 0;
+                       break;
                     }
                 }
-                if (String.valueOf(comando[cont]).equalsIgnoreCase("E")){
+                if (String.valueOf(comando[cont]).equalsIgnoreCase("E")  && cont < num ){
                     if (String.valueOf(orientacao[atual]).equalsIgnoreCase("N")) {
-                        System.out.print(atual + "\n");
                         atual = 3;
-                        //cont  ++;
-                        System.out.print(atual + "\t" + orientacao[atual] + "\n");
-
-
                     }
                     if(String.valueOf(orientacao[atual]).equalsIgnoreCase("S")) {
-                        System.out.print(atual + "\n");
                         atual = 2;
-                        //cont ++;
-                        System.out.print(atual + "\t" + orientacao[atual] + "\n");
-                        //break;
                     }
                     if (String.valueOf(orientacao[atual]).equalsIgnoreCase("L")) {
-                        System.out.print(atual + "\n");
                         atual = 0;
-
-                        System.out.print(atual + "\t" + orientacao[atual] + "\n");
-                        //break;
                     }
                     if (String.valueOf(orientacao[atual]).equalsIgnoreCase("O")) {
-                        System.out.print(atual + "\n");
                         atual = 1;
-
-                        System.out.print(atual + "\t" + orientacao[atual] + "\n");
-                        //break;
                     }
-
                 }
                 cont ++;
             }
-        System.out.print(atual+"\n");
         System.out.print(orientacao[atual]);
-
     }
-
-
-
-
     public static void main(String[] args) throws IOException {
-
-
-
 
         Scanner ler = new Scanner(System.in);
 
         boolean contador = true;
 
-
         while(contador == true){
             int aux = ler.nextInt();
-            String ordem = ler.next();
-            if(aux != 0){
-                comando(aux,ordem);
-            }
             if(aux == 0){
                 contador = false;
             }
-
-
+            if(aux != 0){
+                String ordem = ler.next();
+                comando(aux,ordem);
+            }
         }
-
-
-
-
-
-
-
 
     }
 
