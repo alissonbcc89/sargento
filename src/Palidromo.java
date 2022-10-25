@@ -43,7 +43,7 @@ public class Palidromo {
 
 
         converte(frase);
-        System.out.print(ss.first()+"\t"+ss.last());
+        System.out.print(ss.first()+"\t"+ss.last()+"\n");
        // System.out.print("\n"+palavra);
         ss.clear();
         palavra.clear();
@@ -59,16 +59,18 @@ public class Palidromo {
         Scanner ler = new Scanner(System.in);
         boolean contador = true;
 
+        int cont = 1;
         while(contador == true){
             String aux = ler.next();
             if(aux.equals("*")){
                 contador = false;
             }
             else{
-                imprime(aux);
+               System.out.printf("Caso %d:", cont);
+               cont++;
+               imprime(aux);
             }
         }
-
 
 
 
