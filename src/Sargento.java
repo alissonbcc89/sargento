@@ -27,106 +27,65 @@ public class Sargento {
 
                 if(num == 1){
                     if( String.valueOf(comando[cont]).equalsIgnoreCase("D")){
-                        System.out.println(atual + "\t Posicao:" + orientacao[atual]);
                         atual = 2;
-                        System.out.println(atual + "\t Posicao:" + orientacao[atual]);
-                        //break;
                     }
                     if(String.valueOf(comando[cont]).equalsIgnoreCase("E")){
-                        System.out.println(atual + "\t Posicao:" + orientacao[atual]);
                         atual = 3;
-                        System.out.println(atual + "\t Posicao:" + orientacao[atual]);
-                       // break;
                     }
-                    cont ++;
+
                 }
                 if(num>1){
                     while (cont < num  ) {
-                        System.out.println("\t Iteracao:" + cont);
                     if( String.valueOf(comando[cont]).equalsIgnoreCase("D") ) {
                         if (String.valueOf(orientacao[atual]).equalsIgnoreCase("N")) {
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             atual = 2;
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             cont ++;
                             continue;
-                           // break;
                         }
                         if(String.valueOf(orientacao[atual]).equalsIgnoreCase("S") ) {
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             atual = 3;
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             cont ++;
                             continue;
-                            //break;
                         }
                         if (String.valueOf(orientacao[atual]).equalsIgnoreCase("L")) {
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             atual = 1;
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             cont ++;
-                           // break;
                             continue;
                         }
                         if(String.valueOf(orientacao[atual]).equalsIgnoreCase("O")){
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             atual = 0;
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             cont ++;
-                           // break;
                             continue;
                         }
                     }
                     if (String.valueOf(comando[cont]).equalsIgnoreCase("E")   ) {
                         if (String.valueOf(orientacao[atual]).equalsIgnoreCase("N")) {
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             atual = 3;
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             cont++;
-                          //  break;
                             continue;
 
                         }
                         if (String.valueOf(orientacao[atual]).equalsIgnoreCase("S")) {
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             atual = 2;
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             cont++;
-                          //  break;
                             continue;
 
 
                         }
                         if (String.valueOf(orientacao[atual]).equalsIgnoreCase("L")) {
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             atual = 0;
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             cont++;
-                         //  break;
                             continue;
-
-
-                            //cont ++;
                         }
                         if (String.valueOf(orientacao[atual]).equalsIgnoreCase("O")) {
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             atual = 1;
-                            System.out.println(atual + "\t Posicao:" + orientacao[atual] + "\tcontador:" + cont);
                             cont++;
-                          //  break;
-                            //cont ++;
                             continue;
-
-
                         }
-                        //cont++;
-
-
                     }
                 }
-
             }
-        System.out.print(atual+"\n");
+
         System.out.print(orientacao[atual]);
 
     }
@@ -134,9 +93,7 @@ public class Sargento {
     public static void main(String[] args) throws IOException {
 
         Scanner ler = new Scanner(System.in);
-
         boolean contador = true;
-
 
         while(contador == true){
             int aux = ler.nextInt();
@@ -147,17 +104,7 @@ public class Sargento {
                 String ordem = ler.next();
                 comando(aux,ordem);
             }
-
-
-
-
         }
-
-
-
-
-
-
 
 
     }
