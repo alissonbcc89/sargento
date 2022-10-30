@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 public class GravityBoy {
 
+    enum Setor {
+        Piso,
+        Teto;
+    }
 
     //16 tamanho
     // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 relevo teto
@@ -10,12 +14,9 @@ public class GravityBoy {
     public int inicio(int n, int[] teto, int[] piso) {
 
         int gravidade = 0;
-        enum Setor {
-            Piso,
-            Teto;
-        }
+
         //String[] piso = {"Inferior", "Superior"};
-        //enum pis { Superior, Terreo; }
+       // enum pis { Superior, Terreo; }
         Setor local = Setor.Piso;
         int p = 0;
 

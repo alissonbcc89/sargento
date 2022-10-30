@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-public class Main {
+class Palidormo {
     static SortedSet<String> ss = new TreeSet<String>();
     static ArrayList<String> palavra = new ArrayList<String>();
     //public static String auxiliar;
