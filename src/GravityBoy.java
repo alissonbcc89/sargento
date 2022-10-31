@@ -27,6 +27,12 @@ public class GravityBoy {
                     gravidade = teto[i];
                     break;
                 }
+                if(piso[i]!= 0  ){
+                    local = Setor.Piso;
+                    gravidade = 1;
+                }
+
+
             }
             if(i>0) {
                 if (local.equals(Setor.Piso) && piso[i] == 0) {
@@ -55,10 +61,17 @@ public class GravityBoy {
         //1 1 0 1 1
         //
         //1 2 2 2 1
-       int n = 5;
 
-        int[] teto = {1,1,0,1,1};
-        int[] piso = {1,2,2,2,1};
+
+        //16
+        //
+        int[] teto ={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0};
+        //
+        int[] piso ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1};
+       int n = 16;
+
+        //int[] teto = {1,1,0,1,1};
+        //int[] piso = {1,2,2,2,1};
        // int[] teto = {0,2,1,1,0};
 
         //int[] piso = {1,1,0,1,1};
