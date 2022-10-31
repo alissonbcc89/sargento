@@ -56,6 +56,14 @@ public class GravityBoy {
 
     public static void main(String[] args) throws IOException {
 
+        Scanner sc = new Scanner(System.in);
+
+        
+
+        int valor  = sc.nextInt();
+
+
+
         //5
         //
         //1 1 0 1 1
