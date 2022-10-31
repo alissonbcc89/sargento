@@ -58,11 +58,27 @@ public class GravityBoy {
 
         Scanner sc = new Scanner(System.in);
 
-        
+        boolean valida = true;
 
-        int valor  = sc.nextInt();
+        while(valida == true){
+            int tamanho  = sc.nextInt();
+            int[] teto = new int[tamanho];
+            int[] piso = new int[tamanho];
+            int cont = 0;
+            while(cont < tamanho){
+                int valor = sc.nextInt();
+                teto[cont] = valor;
+                cont++;
+            }
+            cont = 0;
+            while (cont<tamanho){
+                int valor1 = sc.nextInt();
+                piso[cont] = valor1;
+                cont++;
+            }
 
 
+        }
 
         //5
         //
